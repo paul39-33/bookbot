@@ -4,16 +4,19 @@ def get_num_words(path):
     with open(path) as f:
         file_contents = f.read()
     texts = file_contents.split()
-    #print(f"texts : {texts}")
     num_words = len(texts)
-    return print(f"{num_words} words found in the document")
+    print(f"Found {num_words} total words")
+    return file_contents
 
-def get_num_of_chars(path):
-    with open(path) as f:
-        file_contents = list(str(f.read().lower()))
-    #print(f"file cntnt: {file_contents}")
+def get_num_of_chars(file_contents):
+    new_file_contents = list(str(file_contents.lower()))
     letters = dict.fromkeys(string.ascii_lowercase, 0)
-    for char in file_contents:
+    for char in new_file_contents:
         if char in letters:
             letters[char] += 1
-    return print(f"result : {letters}")
+    
+    return letters
+
+def get_it_sorted(letters):
+    char_list = dict(sorted(letters.items(), key = lambda x:x[1], reverse = True))    
+    return char_list
