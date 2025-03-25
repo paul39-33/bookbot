@@ -10,6 +10,7 @@ def get_num_words(path):
 
 def get_num_of_chars(file_contents):
     new_file_contents = list(str(file_contents.lower()))
+    #add letters dictionary containing all alphabet with count starting from 0
     letters = dict.fromkeys(string.ascii_lowercase, 0)
     for char in new_file_contents:
         if char in letters:

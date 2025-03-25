@@ -12,7 +12,6 @@ def main(path):
     for key, value in char_list.items():
         print(f"{key}: {value}")
     print("============= END ===============")
-    #print(get_book_text("books/frankenstein.txt"))
 
 if len(sys.argv) != 2:
     print("Usage: python3 main.py <path_to_book>")
