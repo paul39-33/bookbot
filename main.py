@@ -1,10 +1,9 @@
 import sys
 from stats import *
 
-def main():
-    path = "books/frankenstein.txt"
+def main(path):
     print("============ BOOKBOT ============")
-    print("Analyzing book found at books/frankenstein.txt...")
+    print(f"Analyzing book found at {path}...")
     print("----------- Word Count ----------")
     book = get_num_words(path)
     print("--------- Character Count -------")
@@ -15,11 +14,9 @@ def main():
     print("============= END ===============")
     #print(get_book_text("books/frankenstein.txt"))
 
-#if __name__ == "__main__":
-#    if len(sys.argv) < 2:
-#        print("Usage: python3 main.py <file_path>")
-#        sys.exit(1)
+if len(sys.argv) != 2:
+    print("Usage: python3 main.py <path_to_book>")
+    sys.exit(1)
+path = sys.argv[1]
 
-#    file_path = sys.argv[1]
-#    main(file_path)
-main()
+main(path)
